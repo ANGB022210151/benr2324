@@ -4,9 +4,31 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-   res.send('Hello world')
+
+app.get('/hello', (req, res) => { 
+   res.send('get')
+
+
 })
+
+app.get('/user', async (req, res) => { 
+
+  let collection = await client.db('benr2423').collection('collection').find().toArray() //find() is like a search function it returns everything
+
+  res.send(collection);
+
+
+})
+
+// app.post('/hello', (req, res) => {  
+//   res.status(400).send('post world')
+// })
+
+app.get('/', (req, res) => {  // got two website one is localhost:3000 and localhost:3000/hello
+  res.send('HIIIIIIIIIIIII')
+})
+
+
 
 
 
@@ -63,16 +85,16 @@ async function run() {
     
     )*/
 
-    let deleted = await client.db('benr2423').collection('collection').deleteOne( //delete data in mongodb
-      {
+    // let deleted = await client.db('benr2423').collection('collection').deleteOne( //delete data in mongodb
+    //   {
         
-        _id: new ObjectId('660b6aeb14ee968f5121f356'),
+    //     _id: new ObjectId('660b6aeb14ee968f5121f356'),
         
       
-      }
+    //   }
       
     
-    )
+    // )
 
     
 
