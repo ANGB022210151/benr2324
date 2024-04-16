@@ -3,10 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My first Weebsite</title>
+    <style>
+        img {
+
+            display: block;
+            margin: auto;
+
+
+        }
+
+        body{
+            width: auto;
+          
+        }   
+
+        button{
+
+            height:auto;
+            font-size: 100px;
+
+        }
+        
+.firstbutton{
+        color:rgb(196, 14, 14);
+}
+.secondbutton{
+    
+    color:cyan;
+}
+    </style>
+
+    
 </head>
 <body>
-<script src ="index2.js"></script>
+<!--script src ="index2.js"></script-->
+
+
+    <h1 align="center">原神小萝莉</h1>
+
+    <a href="https://www.reddit.com/r/lolisforever/comments/v67ce5/genshin_lolis_genshin_impact/">
+    <img src="lolis.png" height="1500">
+    </a>
+
+    <!--a href = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hoyolab.com%2Farticle%2F6881728&psig=AOvVaw36xXu8IKZSxm-kaGf5JtG6&ust=1713177788024000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCOD2xdvCwYUDFQAAAAAdAAAAABAE"-->
+    <button class="firstbutton"  onclick="
+    keypresseddown()
+        ">click if you a lolicon!</button>
+    </a>
+
+    <script>
+function keypresseddown(){
+    const buttonElem = document.querySelector('.firstbutton');
+        
+    if (buttonElem.textContent === 'click if you a lolicon!'){
+        buttonElem.textContent = 'yay i m a lolicon';
+        buttonElem.classList.remove('firstbutton');
+        buttonElem.classList.add('secondbutton');
+    } 
+    else if (buttonElem.textContent === 'yay i m a lolicon') {
+        buttonElem.textContent = 'click if you a lolicon!';
+        buttonElem.classList.remove('secondbutton');
+        buttonElem.classList.add('firstbutton');
+    }
+
     
+
+}
+
+
+    </script>
+
 </body>
 </html>
